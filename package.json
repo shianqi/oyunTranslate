@@ -1,0 +1,12 @@
+{
+  "name": "oyun_translate",
+  "version": "1.0.0",
+  "description": "奥云翻译",
+  "main": "js/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" & npm run start",
+    "start": "browser-sync start --server --files \"**/*.css, **/*.html\""
+  },
+  "author": "shianqi@imudges.com",
+  "license": "ISC"
+}

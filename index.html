@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+
+    <title>奥云词典</title>
+    <link rel="stylesheet" href="css/layouts/pure.css">
+    <link rel="stylesheet" href="css/layouts/main.css">
+
+    <!--[if lte IE 8]><link rel="stylesheet" href="css/layouts/side-menu-old-ie.css"><![endif]-->
+    <!--[if gt IE 8]><!--><link rel="stylesheet" href="css/layouts/side-menu.css"><!--<![endif]-->
+    <!--[if lte IE 7]><link rel="stylesheet" href="css/layouts/main-ie7.css"><![endif]-->
+</head>
+<body>
+<div id="layout" class="{{layout}}" ng-controller="ctrl">
+    <!-- Menu toggle -->
+    <a href="#" id="menuLink" class="menu-link" ng-hide="isFirst()">
+        <!-- Hamburger icon -->
+        <span></span>
+    </a>
+    <div id="layout2" ng-view></div>
+</div>
+<script src="./js/angular.js"></script>
+<script src="./js/angular-route.js"></script>
+<script src="./js/app.js"></script>
+<script src="./view1/view1.js"></script>
+<script src="./view2/view2.js"></script>
+<script src="./view3/view3.js"></script>
+<script src="./view4/view4.js"></script>
+<script src="./view5/view5.js"></script>
+<script src="./js/ui.js"></script>
+</body>
+</html>
