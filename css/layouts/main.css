@@ -227,6 +227,14 @@ html,body{
     height: 100%;
 }
 
+.tdResults{
+    background: #f9f9f9;
+}
+
+.tdAbout{
+    background: #d9edf7;
+}
+
 @media (max-width: 48em){
     #title{
         height: 3.2em;
