@@ -47,5 +47,14 @@ angular.module('myApp.view5', ['ngRoute'])
             }
         };
 
+        $scope.mainHorizontal = true;
+        $scope.focus = function () {
+            $scope.mainHorizontal = false;
+        };
+
+        $scope.blur = function () {
+            $scope.mainHorizontal = true;
+        };
+
         $scope.isLoading = false;
     }]);

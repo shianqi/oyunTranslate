@@ -94,7 +94,7 @@ html,body{
     min-width: 44em;
 }
 
-#footer{
+.footer{
     background: #333333;
     font-size: 12px;
     height: 72px;
@@ -149,7 +149,7 @@ html,body{
     border-color: #129FEA;
 }
 
-#inputVertical:focus ~ #footer{
+#inputVertical:focus ~ .footer{
     display: none;
 }
 
@@ -235,6 +235,10 @@ html,body{
     background: #d9edf7;
 }
 
+.footerFalse{
+    display: none;
+}
+
 @media (max-width: 48em){
     #title{
         height: 3.2em;
@@ -250,7 +254,7 @@ html,body{
         height: 3.2em;
     }
 
-    #footer{
+    .footer{
         padding: 0;
     }
 

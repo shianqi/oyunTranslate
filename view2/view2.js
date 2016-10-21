@@ -56,6 +56,15 @@ angular.module('myApp.view2', ['ngRoute'])
             }
         };
 
+        $scope.mainHorizontal = true;
+        $scope.focus = function () {
+            $scope.mainHorizontal = false;
+        };
+
+        $scope.blur = function () {
+            $scope.mainHorizontal = true;
+        };
+
         $scope.haveAbout = function () {
             if($scope.aboutsSize==0){
                 return false;

@@ -36,7 +36,7 @@
         </div>
         <form class="pure-form pure-g" style="margin-left: -1em; margin-right: -1em;">
             <div class="pure-u-3-4">
-                <input ng-model="inputText" class="pure-input-1" type="text" placeholder="关键词">
+                <input ng-model="inputText" ng-focus="focus()" ng-blur="blur()" class="pure-input-1" type="text" placeholder="关键词">
             </div>
             <div class="pure-u-1-4">
                 <button ng-click="submit()" class="pure-input-1 pure-button pure-button-primary">查询</button>
@@ -70,7 +70,7 @@
     </div>
     <div id="footerSpa"></div>
 </div>
-<div id="footer">
+<div id="footer" ng-class="{true:'footer',false:'footerFalse'}[mainHorizontal]">
     <p align="center">Copyright@All Right Reserved 内蒙古奥云信息技术服务有限公司</p>
     <p align="center">地址：内蒙古呼和浩特市 邮编：010021</p>
 </div>
