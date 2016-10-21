@@ -50,17 +50,17 @@
 
             <table border="1" class="mq-table pure-table-bordered pure-table">
                 <thead>
-                <th scope="col" colspan="{{resultsSize}}">解释</th>
-                <th scope="col" colspan="{{aboutsSize}}">相关词条</th>
+                <th scope="col" colspan="{{resultsSize}}" ng-if="haveResult()">解释</th>
+                <th scope="col" colspan="{{aboutsSize}}" ng-if="haveAbout()">相关词条</th>
                 </thead>
                 <tbody>
                 <tr>
-                    <td ng-repeat="result in results2">
+                    <td ng-repeat="result in results2" ng-class="{true:'tdResults',false:'tdAbout'}[$index>=resultsSize]">
                         <p class="text-vertical-cn">{{result.chinese}}</p>
                     </td>
                 </tr>
                 <tr>
-                    <td ng-repeat="result in results2">
+                    <td ng-repeat="result in results2" ng-class="{true:'tdResults',false:'tdAbout'}[$index>=resultsSize]">
                         <p class="text-vertical">{{result.mongolRevise}}</p>
                     </td>
                 </tr>

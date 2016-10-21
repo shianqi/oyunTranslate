@@ -25,10 +25,11 @@ angular.module('myApp.view2', ['ngRoute'])
             var data = {'judge':'汉文--传统蒙古文' , 'userInput':$scope.inputText};
             $http.post("http://dic.mglip.com/Default.aspx/GetArray",data)
                 .success(function (date) {
-                    $scope.resultsSize = 0;
-                    $scope.aboutsSize = 0;
                     $scope.results = [];
                     $scope.abouts = [];
+                    $scope.resultsSize = 0;
+                    $scope.aboutsSize = 0;
+                    $scope.results2 = [];
                     date.d.forEach(function (e) {
                         $scope.results2.push(e);
                         if(e.chinese==$scope.inputText||e.chinese==$scope.inputText+' '){
@@ -53,6 +54,23 @@ angular.module('myApp.view2', ['ngRoute'])
             }else{
                 return true;
             }
+        };
+
+        $scope.haveAbout = function () {
+            if($scope.aboutsSize==0){
+                return false;
+            }else{
+                return true;
+            }
+
+        };
+        $scope.haveResult = function () {
+            if($scope.resultsSize==0){
+                return false;
+            }else{
+                return true;
+            }
+
         };
 
         $scope.isLoading = false;
