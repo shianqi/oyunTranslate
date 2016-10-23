@@ -29,9 +29,7 @@ angular.module('myApp.view2', ['ngRoute'])
                     $scope.abouts = [];
                     $scope.resultsSize = 0;
                     $scope.aboutsSize = 0;
-                    $scope.results2 = [];
                     date.d.forEach(function (e) {
-                        $scope.results2.push(e);
                         if(e.chinese==$scope.inputText||e.chinese==$scope.inputText+' '){
                             $scope.resultsSize ++;
                             $scope.results.push(e);

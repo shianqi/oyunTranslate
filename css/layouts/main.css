@@ -12,6 +12,18 @@ html,body{
     height: 100%;
 }
 
+.wm3{
+    display: block;
+    -moz-writing-mode: vertical-lr;
+    writing-mode: vertical-lr;
+    -webkit-writing-mode: vertical-lr;
+    -o-writing-mode: vertical-lr;
+    -ms-writing-mode: tb-lr;
+    writing-mode: tb-lr;
+    font-family: Oyun Garqag Tig,chagaan;
+    -webkit-text-orientation: sideways-right;
+}
+
 #layout,#layout2{
     height:100%;
 }
@@ -82,7 +94,28 @@ html,body{
     -webkit-overflow-scrolling: touch;
     margin: 0.4em -1em 1em -1em;
 }
+
+
+.table-responsiveMongolia {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.table-responsiveMongolia-tab{
+    height:310px;
+    float: left;
+    border-left: 1px solid #4c4c4c;
+    background: #1f8dd6;
+    color: #ffffff;
+}
+
 .table-responsive table {
+    width: 100%;
+    min-width: 35.5em;
+    border-left-width: 0;
+    border-right-width: 0;
+}
+.table-responsiveMongolia table {
     width: 100%;
     min-width: 35.5em;
     border-left-width: 0;
@@ -237,6 +270,21 @@ html,body{
 
 .footerFalse{
     display: none;
+}
+
+.mongoliaTable{
+    width: 100%;
+    overflow: auto;
+    height: 600px;
+    background: #fff000;
+    position: absolute;
+    display: table-cell;
+}
+
+.mongoliaTableInner{
+    height: 600px;
+    display: table-cell;
+    width: 1000px;
 }
 
 @media (max-width: 48em){

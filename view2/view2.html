@@ -43,27 +43,52 @@
             </div>
         </form>
         <br>
+
+
         <div>
             <p class="loading" align="center" ng-if="isLoading">查询中 <img width="20" src="./img/loading.gif" alt="加载中..."></p>
         </div>
-        <div class="table-responsive" ng-if="haveResults()">
-
-            <table border="1" class="mq-table pure-table-bordered pure-table">
-                <thead>
-                <th scope="col" colspan="{{resultsSize}}" ng-if="haveResult()">解释</th>
-                <th scope="col" colspan="{{aboutsSize}}" ng-if="haveAbout()">相关词条</th>
-                </thead>
+        <!--<div ng-if="haveResults()">-->
+        <div style="height: 400px;margin-left: -1em; margin-right: -1em;" class="table-responsiveMongolia" >
+            <table>
                 <tbody>
-                <tr>
-                    <td ng-repeat="result in results2" ng-class="{true:'tdResults',false:'tdAbout'}[$index>=resultsSize]">
-                        <p class="text-vertical-cn">{{result.chinese}}</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td ng-repeat="result in results2" ng-class="{true:'tdResults',false:'tdAbout'}[$index>=resultsSize]">
-                        <p class="text-vertical">{{result.mongolRevise}}</p>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>
+                            <div class="wm3" style="height: 310px; font-size: 20px;">
+                                <div class="table-responsiveMongolia-tab">
+                                    ᠳᠠᠭᠠᠭᠠᠬᠤ ᠂ ᠲᠡᠰᠬᠦ ᠳᠠᠭᠠᠭᠠᠬᠤ ᠂ ᠲᠡᠰᠬᠦ ᠳᠠᠭᠠᠭᠠᠬᠤ ᠂ ᠲᠡᠰᠬᠦ ᠳᠠᠭᠠᠭᠠᠬᠤ ᠂ ᠲᠡᠰᠬᠦ
+                                </div>
+                                <div class="table-responsiveMongolia-tab" ng-if="haveResult()">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;解释
+                                </div>
+                                <div ng-repeat="result in results" style="height: 310px; float: left; border-left: 1px solid #4c4c4c;">
+                                    <div style="height: 30px; float: left;">
+                                        <p>{{$index+1}}</p>
+                                    </div>
+                                    <div style="height: 80px; float: left;">
+                                        <p>{{result.chinese}}</p>
+                                    </div>
+                                    <div style="height: 200px; float: left;">
+                                        <p>{{result.mongolRevise}}</p>
+                                    </div>
+                                </div>
+                                <div class="table-responsiveMongolia-tab" ng-if="haveAbout()">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;相关词条
+                                </div>
+                                <div ng-repeat="result in abouts" style="height: 310px; float: left;border-left: 1px solid #4c4c4c">
+                                    <div style="height: 30px; float: left;">
+                                        <p>{{$index+1}}</p>
+                                    </div>
+                                    <div style="height: 80px; float: left;">
+                                        <p>{{result.chinese}}</p>
+                                    </div>
+                                    <div style="height: 200px; float: left;">
+                                        <p>{{result.mongolRevise}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>
