@@ -24,13 +24,17 @@ angular.module('myApp.view5', ['ngRoute'])
                 .success(function (date) {
                     $scope.results = [];
                     $scope.abouts = [];
-                    date.d.forEach(function (e) {
-                        if(e.newMog==$scope.inputText||e.newMog==$scope.inputText+' '){
-                            $scope.results.push(e);
-                        }else {
-                            $scope.abouts.push(e);
-                        }
-                    });
+                    if(date.d==null){
+                        alert("未查到结果")
+                    }else{
+                        date.d.forEach(function (e) {
+                            if(e.newMog==$scope.inputText||e.newMog==$scope.inputText+' '){
+                                $scope.results.push(e);
+                            }else {
+                                $scope.abouts.push(e);
+                            }
+                        });
+                    }
                     $scope.isLoading = false;
                 })
                 .error(function () {

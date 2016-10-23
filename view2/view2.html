@@ -54,35 +54,32 @@
                 <tbody>
                     <tr>
                         <td>
-                            <div class="wm3" style="height: 310px; font-size: 20px;">
-                                <div class="table-responsiveMongolia-tab">
-                                    ᠳᠠᠭᠠᠭᠠᠬᠤ ᠂ ᠲᠡᠰᠬᠦ ᠳᠠᠭᠠᠭᠠᠬᠤ ᠂ ᠲᠡᠰᠬᠦ ᠳᠠᠭᠠᠭᠠᠬᠤ ᠂ ᠲᠡᠰᠬᠦ ᠳᠠᠭᠠᠭᠠᠬᠤ ᠂ ᠲᠡᠰᠬᠦ
-                                </div>
+                            <div class="wm3" style="height: 330px; font-size: 20px;">
                                 <div class="table-responsiveMongolia-tab" ng-if="haveResult()">
                                     &nbsp;&nbsp;&nbsp;&nbsp;解释
                                 </div>
-                                <div ng-repeat="result in results" style="height: 310px; float: left; border-left: 1px solid #4c4c4c;">
+                                <div ng-repeat="result in results" style="height: 330px; float: left; border-left: 1px solid #4c4c4c;">
                                     <div style="height: 30px; float: left;">
                                         <p>{{$index+1}}</p>
                                     </div>
                                     <div style="height: 80px; float: left;">
                                         <p>{{result.chinese}}</p>
                                     </div>
-                                    <div style="height: 200px; float: left;">
+                                    <div style="height: 200px; float: left; margin-top: 20px;">
                                         <p>{{result.mongolRevise}}</p>
                                     </div>
                                 </div>
                                 <div class="table-responsiveMongolia-tab" ng-if="haveAbout()">
                                     &nbsp;&nbsp;&nbsp;&nbsp;相关词条
                                 </div>
-                                <div ng-repeat="result in abouts" style="height: 310px; float: left;border-left: 1px solid #4c4c4c">
+                                <div ng-repeat="result in abouts" style="height: 330px; float: left;border-left: 1px solid #4c4c4c">
                                     <div style="height: 30px; float: left;">
                                         <p>{{$index+1}}</p>
                                     </div>
                                     <div style="height: 80px; float: left;">
                                         <p>{{result.chinese}}</p>
                                     </div>
-                                    <div style="height: 200px; float: left;">
+                                    <div style="height: 200px; float: left; margin-top: 20px;">
                                         <p>{{result.mongolRevise}}</p>
                                     </div>
                                 </div>

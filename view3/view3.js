@@ -55,16 +55,21 @@ angular.module('myApp.view3', ['ngRoute'])
             var data = {'judge':'传统蒙古文--汉文' , 'userInput':$scope.inputText};
             $http.post("http://dic.mglip.com/Default.aspx/GetArray",data)
                 .success(function (date) {
-                    date.d.forEach(function (e) {
-                        $scope.results2.push(e);
-                        if(e.mogInteCode==$scope.inputText||e.mogInteCode==$scope.inputText+' '){
-                            $scope.resultsSize ++;
-                            $scope.results.push(e);
-                        }else {
-                            $scope.aboutsSize ++;
-                            $scope.abouts.push(e);
-                        }
-                    });
+
+                    if(date.d==null){
+                        alert("未查到结果")
+                    }else{
+                        date.d.forEach(function (e) {
+                            $scope.results2.push(e);
+                            if(e.mogInteCode==$scope.inputText||e.mogInteCode==$scope.inputText+' '){
+                                $scope.resultsSize ++;
+                                $scope.results.push(e);
+                            }else {
+                                $scope.aboutsSize ++;
+                                $scope.abouts.push(e);
+                            }
+                        });
+                    }
                     $scope.isLoading = false;
                 })
                 .error(function () {
