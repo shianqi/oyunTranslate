@@ -1,6 +1,6 @@
 @font-face {
     font-family:chagaan;
-    src: url("./Menksoft2012.woff") format("woff");
+    src: url("/font/LD-MONG-BT.ttf") format("ttf");
 }
 
 html,body{
@@ -21,7 +21,7 @@ html,body{
     -ms-writing-mode: tb-lr;
     writing-mode: tb-lr;
     font-family: Oyun Garqag Tig,chagaan;
-    -webkit-text-orientation: sideways-right;
+    /*-webkit-text-orientation: sideways-right;*/
 }
 
 #layout,#layout2{
@@ -102,7 +102,7 @@ html,body{
 }
 
 .table-responsiveMongolia-tab{
-    height:330px;
+    height:100%;
     float: left;
     border-left: 1px solid #4c4c4c;
     background: #1f8dd6;
