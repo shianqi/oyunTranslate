@@ -1,6 +1,10 @@
 @font-face {
-    font-family:chagaan;
-    src: url("/font/LD-MONG161008-02-BT.ttf") format("ttf");
+    font-family: "LDMONG16100802BT";
+    src: url("LD-MONG-BT.ttf") format("ttf");
+    src: url("LD-MONG-BT.eot") format("eot");
+    src: url("LD-MONG-BT.svg") format("svg");
+    src: url("LD-MONG-BT.otf") format("otf");
+    src: url("LD-MONG-BT.woff") format("woff");
 }
 
 html,body{
@@ -20,8 +24,26 @@ html,body{
     -o-writing-mode: vertical-lr;
     -ms-writing-mode: tb-lr;
     writing-mode: tb-lr;
-    font-family: Oyun Garqag Tig,chagaan;
-    /*-webkit-text-orientation: sideways-right;*/
+    font-family: "LDMONG16100802BT","Times New Roman", Times, serif;
+}
+
+.wm{
+    text-orientation: sideways-right;
+    -webkit-text-orientation: sideways-right;
+}
+
+.wm_span{
+    -moz-writing-mode: vertical-lr;
+    writing-mode: vertical-lr;
+    -webkit-writing-mode: vertical-lr;
+    -o-writing-mode: vertical-lr;
+    -ms-writing-mode: tb-lr;
+    writing-mode: tb-lr;
+    font-family: "LDMONG16100802BT","Times New Roman", Times, serif;
+    text-orientation: sideways-right;
+    -webkit-text-orientation: sideways-right;
+
+    vertical-align:top;
 }
 
 #layout,#layout2{
@@ -33,6 +55,7 @@ html,body{
     width: 100%;
     transition: background 0.5s, height 0.2s;
     position: fixed;
+    z-index: 9;
     display: none;
 }
 
@@ -58,13 +81,13 @@ html,body{
 
     layout-flow: vertical-ideographic;
     white-space: nowrap;
-    font-family: Oyun Garqag Tig,chagaan;
+    font-family: 'LDMONG16100802BT';
     font-size:22px;
     margin: 0;
 }
 
 .text-cyril{
-    font-family:"Times New Roman", Times, serif;
+    font-family: 'LDMONG16100802BT',"Times New Roman", Times, serif;
     color: #333333;
 }
 
@@ -91,14 +114,17 @@ html,body{
 
 .table-responsive {
     overflow-x: auto;
+    z-index: 0;
     -webkit-overflow-scrolling: touch;
-    margin: 0.4em -1em 1em -1em;
+    overflow-scrolling: touch;
+    margin: 0.4em -0.5em 1em -1em;
 }
 
 
 .table-responsiveMongolia {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
 }
 
 .table-responsiveMongolia-tab{
@@ -141,6 +167,7 @@ html,body{
     -moz-box-sizing:border-box; /* Firefox */
     -webkit-box-sizing:border-box; /* Safari */
     padding-left: 150px;
+    z-index: 9;
 }
 
 #footerSpa{
@@ -187,7 +214,7 @@ html,body{
 }
 
 #inputVertical{
-    font-family: "Times New Roman", Times, serif;
+    font-family: 'LDMONG16100802BT',"Times New Roman", Times, serif;
     -webkit-writing-mode:vertical-rl;
     -moz-writing-mode: vertical-rl;
     -ms-writing-mode: tb-rl;

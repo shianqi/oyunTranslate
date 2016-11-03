@@ -1,6 +1,6 @@
 <div id="menu">
     <div class="pure-menu">
-        <a id="logo"  class="pure-menu-heading" href="#/view1"><img style="position: relative; top: 0.3em;" src="/img/logo_text_sm.png" alt="奥云词典">奥云词典</a>
+        <a id="logo"  class="pure-menu-heading" href="#/view1"><span class="wm_span">ᠣᠶᠣᠨ</span> <span class="wm_span">ᠲᠣᠯᠢ</span> 奥云词典</a>
 
         <ul class="pure-menu-list">
             <li id="menu-item-1" class="pure-menu-item">
@@ -23,8 +23,8 @@
 </div>
 
 <div id="main">
-    <div id="title" >
-        <div style="margin-left: 64px; margin-top:16px; color: #fff">
+    <div id="title">
+        <div style="margin-left: 64px; margin-top:16px; color: #fff; z-index: 9;">
             ←选择语言
         </div>
     </div>
@@ -54,24 +54,24 @@
                 <th scope="col" colspan="1">西里尔蒙古文</th>
                 </thead>
                 <tbody>
-                <td scope="col" colspan="3" style="background: #1f8dd6; color: #ffffff;">解释</td>
+                <td scope="col" colspan="3" style="background: #1f8dd6; color: #ffffff;" ng-if="results.length>0">解释</td>
                 <tr ng-repeat="result in results">
-                    <td>
+                    <td style="padding: 0.5em; width: 30px;">
                         <p class="text-cn">{{$index+1}}</p>
                     </td>
-                    <td>
+                    <td style="width: 30px;">
                         <p class="text-cn">{{result.chinese}}</p>
                     </td>
                     <td>
                         <p class="text-cyril">{{result.newMog}}</p>
                     </td>
                 </tr>
-                <td scope="col" colspan="3" style="background: #1f8dd6; color: #ffffff;">相关词条</td>
-                <tr ng-repeat="about in abouts">
-                    <td>
+                <td scope="col" colspan="3" style="background: #1f8dd6; color: #ffffff;" ng-if="aboutss.length>0">相关词条</td>
+                <tr ng-repeat="about in aboutss">
+                    <td style="padding: 0.5em; width: 20px;">
                         <p class="text-cn">{{$index+1}}</p>
                     </td>
-                    <td>
+                    <td style="width: 30px;">
                         <p class="text-cn">{{about.chinese}}</p>
                     </td>
                     <td>

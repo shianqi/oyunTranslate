@@ -1,6 +1,6 @@
 <div id="menu">
     <div class="pure-menu">
-        <a id="logo"  class="pure-menu-heading" href="#/view1"><img style="position: relative; top: 0.3em;" src="/img/logo_text_sm.png" alt="奥云词典">奥云词典</a>
+        <a id="logo"  class="pure-menu-heading" href="#/view1"><span class="wm_span">ᠣᠶᠣᠨ</span> <span class="wm_span">ᠲᠣᠯᠢ</span> 奥云词典</a>
         <ul class="pure-menu-list">
             <li id="menu-item-1" class="pure-menu-item">
                 <a href="#/view2" class="pure-menu-link">汉文→传统蒙古文</a>
@@ -32,7 +32,7 @@
     <div id="contentHorizontal">
         <!--<div id="title3"></div>-->
         <div id="mainHorizontal" ng-class="{true:'mainHorizontalTrue',false:'mainHorizontalFalse'}[mainHorizontal]">
-            <div id="inputVertical" ng-focus="focus()" ng-blur="blur()" ng-keydown="checkEnter(event)" contenteditable="true" spellcheck="false"></div>
+            <div class="wm" id="inputVertical" ng-focus="focus()" ng-blur="blur()" ng-keydown="checkEnter(event)" contenteditable="true" spellcheck="false"></div>
             <div id="buttonVertical" ng-click="submit()">查询</div>
             <div>
                 <p class="loading" align="center" ng-if="isLoading">查询中 <img width="20" src="./img/loading.gif" alt="加载中..."></p>
@@ -55,9 +55,9 @@
                                 </div>
                                 <div ng-repeat="result in results" style="height: 100%; float: left; border-left: 1px solid #4c4c4c;">
                                     <div style="height: 40px; float: left;">
-                                        <p>{{$index+1}}</p>
+                                        <p>&nbsp;&nbsp;{{$index+1}}</p>
                                     </div>
-                                    <div style="height: 90px; float: left;">
+                                    <div class="wm" style="height: 90px; float: left;">
                                         <p>{{result.mongolRevise}}</p>
                                     </div>
                                     <div style="float: left; margin-top: 20px;">
@@ -69,13 +69,13 @@
                                 </div>
                                 <div ng-repeat="result in abouts" style="height: 100%; float: left;border-left: 1px solid #4c4c4c">
                                     <div style="height: 40px; float: left;">
-                                        <p>{{$index+1}}</p>
+                                        <p>&nbsp;&nbsp;{{$index+1}}</p>
                                     </div>
-                                    <div style="height: 90px; float: left;">
-                                        <p>{{result.chinese}}</p>
+                                    <div class="wm" style="height: 90px; float: left;">
+                                        <p>{{result.mongolRevise}}</p>
                                     </div>
                                     <div style="float: left; margin-top: 20px;">
-                                        <p>{{result.mongolRevise}}</p>
+                                        <p>{{result.chinese}}</p>
                                     </div>
                                 </div>
                             </div>

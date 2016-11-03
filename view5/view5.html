@@ -1,6 +1,6 @@
 <div id="menu">
     <div class="pure-menu">
-        <a id="logo"  class="pure-menu-heading" href="#/view1"><img style="position: relative; top: 0.3em;" src="/img/logo_text_sm.png" alt="奥云词典">奥云词典</a>
+        <a id="logo"  class="pure-menu-heading" href="#/view1"><span class="wm_span">ᠣᠶᠣᠨ</span> <span class="wm_span">ᠲᠣᠯᠢ</span> 奥云词典</a>
         <ul class="pure-menu-list">
             <li id="menu-item-1" class="pure-menu-item">
                 <a href="#/view2" class="pure-menu-link">汉文→传统蒙古文</a>
@@ -35,7 +35,7 @@
         </div>
         <form class="pure-form pure-g" style="margin-left: -1em; margin-right: -1em;">
             <div class="pure-u-3-4">
-                <input ng-model="inputText" ng-focus="focus()" ng-blur="blur()" class="pure-input-1" type="text" placeholder="关键词">
+                <input ng-model="inputText" ng-focus="focus()" ng-blur="blur()" class="pure-input-1" style="font-family: 'Times New Roman', Times, serif;" type="text" placeholder="关键词">
             </div>
             <div class="pure-u-1-4">
                 <button ng-click="submit()" class="pure-input-1 pure-button pure-button-primary">查询</button>
@@ -53,28 +53,28 @@
                 <th scope="col" colspan="1">汉文</th>
                 </thead>
                 <tbody>
-                <td scope="col" colspan="3" style="background: #1f8dd6; color: #ffffff;">解释</td>
+                <td scope="col" colspan="3" style="background: #1f8dd6; color: #ffffff;" ng-if="results.length>0">解释</td>
                 <tr ng-repeat="result in results">
                     <td>
                         <p class="text-cn">{{$index+1}}</p>
                     </td>
                     <td>
-                        <p class="text-cn">{{result.newMog}}</p>
+                        <p class="text-cyril">{{result.newMog}}</p>
                     </td>
                     <td>
-                        <p class="text-cyril">{{result.chinese}}</p>
+                        <p class="text-cn">{{result.chinese}}</p>
                     </td>
                 </tr>
-                <td scope="col" colspan="3" style="background: #1f8dd6; color: #ffffff;">相关词条</td>
-                <tr ng-repeat="about in abouts">
+                <td scope="col" colspan="3" style="background: #1f8dd6; color: #ffffff;" ng-if="aboutss.length>0">相关词条</td>
+                <tr ng-repeat="about in aboutss">
                     <td>
                         <p class="text-cn">{{$index+1}}</p>
                     </td>
                     <td>
-                        <p class="text-cn">{{about.newMog}}</p>
+                        <p class="text-cyril">{{about.newMog}}</p>
                     </td>
                     <td>
-                        <p class="text-cyril">{{about.chinese}}</p>
+                        <p class="text-cn">{{about.chinese}}</p>
                     </td>
                 </tr>
                 </tbody>
