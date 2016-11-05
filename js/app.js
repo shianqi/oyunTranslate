@@ -3,6 +3,7 @@
 /**
  * app 入口文件
  * 语言 AngularJs
+ * 如果要增加界面，要在这里配置路由
  * @author shianqi@imudges.com
  */
 angular.module('myApp', [

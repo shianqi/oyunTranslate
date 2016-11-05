@@ -315,8 +315,8 @@ html,body{
 }
 
 .product_title a{
-    color: #ffffff;
-    font-size: 22px;
+    color: #129FEA;
+    font-size: 16px;
     margin: 0;
     text-decoration:none;
 }
@@ -327,6 +327,11 @@ html,body{
 
 .product_title p{
     margin: 0;
+}
+
+.product_title p a{
+    color: #7f8c8d;
+    font-size: 12px;
 }
 
 .product_logo{
