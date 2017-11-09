@@ -14,11 +14,11 @@
                 <a href="#/view4" class="pure-menu-link">汉文→西里尔蒙古文</a>
             </li>
 
-            <li id="menu-item-4" class="menu-item-divided pure-menu-selected">
+            <li id="menu-item-4" class="menu-item-divided">
                 <a href="#/view5" class="pure-menu-link">西里尔蒙古文→汉文</a>
             </li>
 
-            <li id="menu-item-5" class="pure-menu-item">
+            <li id="menu-item-5" class="menu-item-divided pure-menu-selected">
                 <a href="#/view6" class="pure-menu-link">汉文名<->蒙古文名</a>
             </li>
         </ul>
@@ -35,38 +35,38 @@
     <div class="content">
         <div ng-if="!haveResults()">
 
-            <div align="center" style="margin: 10px;"><img src="./img/logo2.png" alt="奥云词典"><p>西里尔蒙古文→汉文</p></div>
+            <div align="center" style="margin: 10px;"><img src="./img/logo2.png" alt="奥云词典"><p>汉文人名<->蒙古文人名</p></div>
         </div>
         <form class="pure-form pure-g" style="margin-left: -1em; margin-right: -1em;">
             <div class="pure-u-3-4">
                 <input ng-model="inputText" ng-focus="focus()" ng-blur="blur()" class="pure-input-1" style="font-family: 'Times New Roman', Times, serif;" type="text" placeholder="关键词">
             </div>
             <div class="pure-u-1-4">
-                <button ng-click="submit()" class="pure-input-1 pure-button pure-button-primary">查询</button>
+                <button ng-click="submit()" class="pure-input-1 pure-button pure-button-primary">转换</button>
             </div>
         </form>
         <br>
         <div>
-            <p class="loading" align="center" ng-if="isLoading">查询中 <img width="20" src="./img/loading.gif" alt="加载中..."></p>
+            <p class="loading" align="center" ng-if="isLoading">转换中 <img width="20" src="./img/loading.gif" alt="加载中..."></p>
         </div>
         <div class="table-responsive" ng-if="haveResults()">
             <table border="1" class="mq-table pure-table-bordered pure-table">
                 <thead>
                 <th scope="col" colspan="1">#</th>
-                <th scope="col" colspan="1">西里尔蒙古文</th>
-                <th scope="col" colspan="1">汉文</th>
+                <th scope="col" colspan="1">汉文名字</th>
+                <th scope="col" colspan="1">蒙古文名字</th>
                 </thead>
                 <tbody>
-                <td scope="col" colspan="3" style="background: #1f8dd6; color: #ffffff;" ng-if="results.length>0">解释</td>
+                <!-- <td scope="col" colspan="3" style="background: #1f8dd6; color: #ffffff;" ng-if="results.length>0">解释</td> -->
                 <tr ng-repeat="result in results">
                     <td>
                         <p class="text-cn">{{$index+1}}</p>
                     </td>
                     <td>
-                        <p class="text-cyril">{{result.newMog}}</p>
+                        <p class="text-cyril">{{requsetStr}}</p>
                     </td>
                     <td>
-                        <p class="text-cn">{{result.chinese}}</p>
+                        <p class="text-cn">{{result}}</p>
                     </td>
                 </tr>
                 <td scope="col" colspan="3" style="background: #1f8dd6; color: #ffffff;" ng-if="aboutss.length>0">相关词条</td>
