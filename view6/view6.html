@@ -19,7 +19,7 @@
             </li>
 
             <li id="menu-item-5" class="menu-item-divided pure-menu-selected">
-                <a href="#/view6" class="pure-menu-link">汉文名<->蒙古文名</a>
+                <a href="#/view6" class="pure-menu-link">汉文名→蒙古文名</a>
             </li>
         </ul>
     </div>
@@ -35,54 +35,62 @@
     <div class="content">
         <div ng-if="!haveResults()">
 
-            <div align="center" style="margin: 10px;"><img src="./img/logo2.png" alt="奥云词典"><p>汉文人名<->蒙古文人名</p></div>
+            <div align="center" style="margin: 10px;"><img src="./img/logo2.png" alt="奥云词典"><p>汉文人名→蒙古文人名</p></div>
         </div>
         <form class="pure-form pure-g" style="margin-left: -1em; margin-right: -1em;">
             <div class="pure-u-3-4">
                 <input ng-model="inputText" ng-focus="focus()" ng-blur="blur()" class="pure-input-1" style="font-family: 'Times New Roman', Times, serif;" type="text" placeholder="关键词">
             </div>
             <div class="pure-u-1-4">
-                <button ng-click="submit()" class="pure-input-1 pure-button pure-button-primary">转换</button>
+                <button ng-click="submit()" class="pure-input-1 pure-button pure-button-primary">翻译</button>
             </div>
         </form>
         <br>
         <div>
             <p class="loading" align="center" ng-if="isLoading">转换中 <img width="20" src="./img/loading.gif" alt="加载中..."></p>
         </div>
-        <div class="table-responsive" ng-if="haveResults()">
-            <table border="1" class="mq-table pure-table-bordered pure-table">
-                <thead>
-                <th scope="col" colspan="1">#</th>
-                <th scope="col" colspan="1">汉文名字</th>
-                <th scope="col" colspan="1">蒙古文名字</th>
-                </thead>
+        <div style="height: 400px;margin-left: -1em; margin-right: -1em;" class="table-responsiveMongolia" >
+            <table>
                 <tbody>
-                <!-- <td scope="col" colspan="3" style="background: #1f8dd6; color: #ffffff;" ng-if="results.length>0">解释</td> -->
-                <tr ng-repeat="result in results">
-                    <td>
-                        <p class="text-cn">{{$index+1}}</p>
-                    </td>
-                    <td>
-                        <p class="text-cyril">{{requsetStr}}</p>
-                    </td>
-                    <td>
-                        <p class="text-cn">{{result}}</p>
-                    </td>
-                </tr>
-                <td scope="col" colspan="3" style="background: #1f8dd6; color: #ffffff;" ng-if="aboutss.length>0">相关词条</td>
-                <tr ng-repeat="about in aboutss">
-                    <td>
-                        <p class="text-cn">{{$index+1}}</p>
-                    </td>
-                    <td>
-                        <p class="text-cyril">{{about.newMog}}</p>
-                    </td>
-                    <td>
-                        <p class="text-cn">{{about.chinese}}</p>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>
+                            <div class="wm3" style="height: 330px; font-size: 20px;">
+                                <div class="table-responsiveMongolia-tab" ng-if="haveResults()">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;解释
+                                </div>
+                                <div ng-repeat="result in results" style="height: 330px; float: left; border-left: 1px solid #4c4c4c;">
+                                    <div style="height: 30px; float: left;">
+                                        <p>{{$index+1}}</p>
+                                    </div>
+                                    <div style="height: 80px; float: left;">
+                                        <p>{{requsetStr}}</p>
+                                    </div>
+                                    <div class="wm"  style="height: 200px; float: left; margin-top: 20px;">
+                                        <p>{{result}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
+        </div>
+        <div ng-if="showFeedback()">
+            <p>
+                是否翻译准确？
+                <input 
+                    class="pure-button pure-button-primary"
+                    type="button"
+                    value="是"
+                    ng-click="setFeedback(true)"
+                />
+                <input
+                    class="pure-button pure-button-warm"
+                    type="button"
+                    value="否"
+                    ng-click="setFeedback(false)"
+                />
+            </p>
         </div>
     </div>
     <div id="footerSpa"></div>

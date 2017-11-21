@@ -13,11 +13,13 @@ angular.module('myApp.view6', ['ngRoute'])
         $scope.inputText = "";
         $scope.results = [];
         $scope.aboutss = [];
+        $scope.feedback = false;
         $scope.requsetStr = "";
         $scope.submit = function(){
             $scope.requsetStr = $scope.inputText;
             $scope.results = [];
             $scope.aboutss = [];
+            $scope.feedback = false;
             if($scope.inputText==""){
                 alert("请输入关键词进行查询");
                 return;
@@ -36,17 +38,30 @@ angular.module('myApp.view6', ['ngRoute'])
                 })
                 .error(function () {
                     alert("查询失败");
+                    // $scope.results.push('ᠦᠢᠯᠡᠳᠪᠦᠷᠢ');
                     $scope.isLoading = false;
                 });
-            //var response = {"d":[{"__type":"Dictionary","id":0,"chinese":"吃饱 ","mogInteCode":" ","source":null,"character":null,"mogMekcode":null,"mogLatin":null,"mogLatinAlert":null,"mogInteAlert":null,"classify":null,"english":null,"newMog":"гэдэс гарах ","oldMogExplain":null,"newMogExplain":null,"mogIntelletualCode":null,"mogMongoliaCode":null,"middleEncode":null,"chineseCount":0},{"__type":"Dictionary","id":0,"chinese":"吃饱;饱足 ","mogInteCode":" ","source":null,"character":null,"mogMekcode":null,"mogLatin":null,"mogLatinAlert":null,"mogInteAlert":null,"classify":null,"english":null,"newMog":"цадах ","oldMogExplain":null,"newMogExplain":null,"mogIntelletualCode":null,"mogMongoliaCode":null,"middleEncode":null,"chineseCount":0},{"__type":"Dictionary","id":0,"chinese":"使之吃饱;让人吃饱 ","mogInteCode":" ","source":null,"character":null,"mogMekcode":null,"mogLatin":null,"mogLatinAlert":null,"mogInteAlert":null,"classify":null,"english":null,"newMog":"цатгах ","oldMogExplain":null,"newMogExplain":null,"mogIntelletualCode":null,"mogMongoliaCode":null,"middleEncode":null,"chineseCount":0}]};
         };
         $scope.haveResults = function(){
-            if($scope.results.length==0&&$scope.aboutss.length==0){
+            if($scope.results.length === 0 && $scope.aboutss.length === 0){
                 return false;
             }else{
                 return true;
             }
         };
+
+        $scope.showFeedback = function() {
+            return (!$scope.feedback) && $scope.haveResults();
+        }
+
+        $scope.setFeedback = function(feedback) {
+            $scope.feedback = true;
+            $http.post("http://localhost:4000/feedback/post", {
+                input: $scope.inputText,
+                result: $scope.results[0],
+                feedback: feedback
+            })
+        }
 
         $scope.mainHorizontal = true;
         $scope.focus = function () {

@@ -1,10 +1,12 @@
 @font-face {
     font-family: "LDMONG16100802BT";
-    src: url("LD-MONG-BT.ttf") format("ttf");
-    src: url("LD-MONG-BT.eot") format("eot");
-    src: url("LD-MONG-BT.svg") format("svg");
-    src: url("LD-MONG-BT.otf") format("otf");
-    src: url("LD-MONG-BT.woff") format("woff");
+    /* IE 9 */
+    src: url('LD-MONG-BT.eof');
+    src:
+        url("LD-MONG-BT.ttf?t=1494653894295#iefix") format('embedded-opentype'),
+        url("LD-MONG-BT.woff") format("woff"),
+        url("LD-MONG-BT.ttf") format("truetype"),
+        url("LD-MONG-BT.svg") format("svg");
 }
 
 html,body{
