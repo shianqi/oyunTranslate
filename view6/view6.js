@@ -56,7 +56,7 @@ angular.module('myApp.view6', ['ngRoute'])
 
         $scope.setFeedback = function(feedback) {
             $scope.feedback = true;
-            $http.post("http://localhost:4000/feedback/post", {
+            $http.post("http://202.207.12.185:4000/feedback/post", {
                 input: $scope.inputText,
                 result: $scope.results[0],
                 feedback: feedback
