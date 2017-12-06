@@ -32,6 +32,7 @@
         </div>
     </div>
     <div id="title2"></div>
+
     <div class="content">
         <div ng-if="!haveResults()">
 
@@ -46,9 +47,12 @@
             </div>
         </form>
         <br>
+
+
         <div>
             <p class="loading" align="center" ng-if="isLoading">转换中 <img width="20" src="./img/loading.gif" alt="加载中..."></p>
         </div>
+        <!--<div ng-if="haveResults()">-->
         <div style="height: 400px;margin-left: -1em; margin-right: -1em;" class="table-responsiveMongolia" >
             <table>
                 <tbody>
@@ -75,6 +79,7 @@
                 </tbody>
             </table>
         </div>
+        <br>
         <div ng-if="showFeedback()">
             <p>
                 是否翻译准确？
